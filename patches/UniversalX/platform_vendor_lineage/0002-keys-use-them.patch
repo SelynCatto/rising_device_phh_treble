@@ -1,0 +1,23 @@
+From 3dd47b4317336bb9a8f1798dfaf24cff5ed1b1ae Mon Sep 17 00:00:00 2001
+From: ItsLynix <lynixthewolf@gmail.com>
+Date: Mon, 27 May 2024 00:24:46 +0200
+Subject: [PATCH 2/2] keys: use them
+
+---
+ config/common.mk | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/config/common.mk b/config/common.mk
+index da53184..897b3ce 100644
+--- a/config/common.mk
++++ b/config/common.mk
+@@ -1,5 +1,6 @@
+ # Allow vendor/extra to override any property by setting it first
+ $(call inherit-product-if-exists, vendor/extra/product.mk)
++$(call inherit-product-if-exists, vendor/rising/keys/keys.mk)
+ include vendor/rising/config/rising.mk
+ 
+ PRODUCT_BRAND ?= risingOS
+-- 
+2.39.5
+

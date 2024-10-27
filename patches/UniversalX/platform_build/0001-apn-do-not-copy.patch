@@ -1,0 +1,28 @@
+From 4503c1d2a2c4b2c84614849ba32d14342d6d25a9 Mon Sep 17 00:00:00 2001
+From: ItsLynix <lynixthewolf@gmail.com>
+Date: Sat, 26 Oct 2024 12:46:20 -0400
+Subject: [PATCH] apn: do not copy
+
+---
+ target/product/aosp_product.mk | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/target/product/aosp_product.mk b/target/product/aosp_product.mk
+index 1948c18..1df0516 100644
+--- a/target/product/aosp_product.mk
++++ b/target/product/aosp_product.mk
+@@ -31,7 +31,7 @@ PRODUCT_PACKAGES += \
+ 
+ # Telephony:
+ #   Provide a APN configuration to GSI product
+-ifeq ($(LINEAGE_BUILD),)
+-PRODUCT_COPY_FILES += \
+-    device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+-endif
++#ifeq ($(LINEAGE_BUILD),)
++#PRODUCT_COPY_FILES += \
++#    device/sample/etc/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
++#endif
+-- 
+2.39.5
+
