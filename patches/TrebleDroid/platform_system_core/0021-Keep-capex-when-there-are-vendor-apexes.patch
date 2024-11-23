@@ -1,4 +1,4 @@
-From 790fa1d67efa4cc350248e5e2e6f573674d1c416 Mon Sep 17 00:00:00 2001
+From 9b75ec617e9967762ef5b96b810e83e5c83b1df4 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 16 Jan 2024 10:30:57 -0500
 Subject: [PATCH 21/24] Keep capex when there are vendor apexes
@@ -11,7 +11,7 @@ If there is a vendor apex, enable APEX anyway.
  1 file changed, 12 insertions(+), 2 deletions(-)
 
 diff --git a/init/property_service.cpp b/init/property_service.cpp
-index f7b7317..9c66e44 100644
+index a296182..6583501 100644
 --- a/init/property_service.cpp
 +++ b/init/property_service.cpp
 @@ -719,8 +719,18 @@ static bool kernel_supports_capex() {

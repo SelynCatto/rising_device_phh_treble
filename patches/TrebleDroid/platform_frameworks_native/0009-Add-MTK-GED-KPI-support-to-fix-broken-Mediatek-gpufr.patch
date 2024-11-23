@@ -1,4 +1,4 @@
-From 47dcb6b378826055f8bcfa53882f48aedef2b8d8 Mon Sep 17 00:00:00 2001
+From f22de7f0d6cca7eca8da0c6d31ea97dfad78a147 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 25 Nov 2023 08:15:28 -0500
 Subject: [PATCH 09/14] Add MTK GED KPI support to fix broken Mediatek gpufreq
@@ -22,7 +22,7 @@ well)
  2 files changed, 205 insertions(+)
 
 diff --git a/libs/gui/Surface.cpp b/libs/gui/Surface.cpp
-index 9d70e7c..b897fd7 100644
+index 7732391..d5148c9 100644
 --- a/libs/gui/Surface.cpp
 +++ b/libs/gui/Surface.cpp
 @@ -24,6 +24,9 @@
@@ -277,10 +277,10 @@ index 9d70e7c..b897fd7 100644
          mConnectedToCpu = true;
          // Clear the dirty region in case we're switching from a non-CPU API
 diff --git a/libs/gui/include/gui/Surface.h b/libs/gui/include/gui/Surface.h
-index bdcaaf2..7cb27fc 100644
+index f1068b8..289dee4 100644
 --- a/libs/gui/include/gui/Surface.h
 +++ b/libs/gui/include/gui/Surface.h
-@@ -649,6 +649,9 @@ protected:
+@@ -661,6 +661,9 @@ protected:
  
      // Buffers that are successfully dequeued/attached and handed to clients
      std::unordered_set<int> mDequeuedSlots;

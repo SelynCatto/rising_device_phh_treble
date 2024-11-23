@@ -1,4 +1,4 @@
-From cc8b85a162d8e51290c010578f823eac35f4ec62 Mon Sep 17 00:00:00 2001
+From e2ad8e39fe5544e803f037fc9ba00b59bc8d4853 Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Thu, 5 Apr 2018 10:01:19 +0800
 Subject: [PATCH 01/49] Disable vendor mismatch warning
@@ -9,10 +9,10 @@ Change-Id: Ieb8fe91e2f02462f074312ed0f4885d183e9780b
  1 file changed, 1 insertion(+), 13 deletions(-)
 
 diff --git a/services/core/java/com/android/server/wm/ActivityTaskManagerService.java b/services/core/java/com/android/server/wm/ActivityTaskManagerService.java
-index e6f2016a0..0c1a33fa2 100644
+index 1e0b7dafa..6d48f35ce 100644
 --- a/services/core/java/com/android/server/wm/ActivityTaskManagerService.java
 +++ b/services/core/java/com/android/server/wm/ActivityTaskManagerService.java
-@@ -6377,19 +6377,7 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
+@@ -6375,19 +6375,7 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
  
                  if (!isBuildConsistent) {
                      Slog.e(TAG, "Build fingerprint is not consistent, warning user");
@@ -34,5 +34,5 @@ index e6f2016a0..0c1a33fa2 100644
              }
              Trace.traceEnd(TRACE_TAG_WINDOW_MANAGER);
 -- 
-2.45.2
+2.39.5
 

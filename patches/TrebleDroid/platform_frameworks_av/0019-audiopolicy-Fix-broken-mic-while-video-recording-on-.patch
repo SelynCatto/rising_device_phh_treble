@@ -1,4 +1,4 @@
-From 3c4718b0e0ce5690cc7ebac55e7b31f832a802f3 Mon Sep 17 00:00:00 2001
+From c67f83af26669c3ceadbc484e99eb847474521fc Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Sun, 30 Apr 2023 23:29:04 +0100
 Subject: [PATCH 19/23] audiopolicy: Fix broken mic while video recording on
@@ -36,5 +36,5 @@ index b9f71cc..77a96b4 100644
                  if (false && !mIgnoreVendorExtensions) {
                      ALOGE("%s: no source found with name \"%s\"", __func__, devTag);
 -- 
-2.45.2
+2.39.5
 

@@ -1,4 +1,4 @@
-From 79b584f6cd3c64757946562e99476792367c44b7 Mon Sep 17 00:00:00 2001
+From 12359123dda313f5f713344dce910c91699ddd1c Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Mon, 11 Oct 2021 16:10:42 -0400
 Subject: [PATCH 16/23] Revert "Remove support for audio HAL V2 from the
@@ -148,5 +148,5 @@ index 1cac9da..78c0c56 100644
              ret = factory->openDevice_7_1(
  #else
 -- 
-2.45.2
+2.39.5
 

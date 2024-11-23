@@ -1,4 +1,4 @@
-From 09335ea9281ad9702a450439fddb4490327e064c Mon Sep 17 00:00:00 2001
+From db98f43d3e377688d6b9261f6e4442379434d03c Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 4 Feb 2024 18:01:07 -0500
 Subject: [PATCH 44/49] Some Samsung devices use SW_FLIP 0x15 rather than
@@ -9,7 +9,7 @@ Subject: [PATCH 44/49] Some Samsung devices use SW_FLIP 0x15 rather than
  1 file changed, 18 insertions(+), 7 deletions(-)
 
 diff --git a/services/core/java/com/android/server/input/InputManagerService.java b/services/core/java/com/android/server/input/InputManagerService.java
-index de641934a..754110724 100644
+index 005781672..16effd9d4 100644
 --- a/services/core/java/com/android/server/input/InputManagerService.java
 +++ b/services/core/java/com/android/server/input/InputManagerService.java
 @@ -367,6 +367,8 @@ public class InputManagerService extends IInputManager.Stub
@@ -52,5 +52,5 @@ index de641934a..754110724 100644
  
      void registerLidSwitchCallbackInternal(@NonNull LidSwitchCallback callback) {
 -- 
-2.45.2
+2.39.5
 

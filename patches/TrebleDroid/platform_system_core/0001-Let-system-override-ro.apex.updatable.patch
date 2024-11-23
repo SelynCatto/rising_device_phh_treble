@@ -1,4 +1,4 @@
-From f47faa8583e582afe219445f8f91e037f7dc715f Mon Sep 17 00:00:00 2001
+From ff6c09d10027d13c86a6c3324e7b5fe3a3765020 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 23 Feb 2022 17:37:47 -0500
 Subject: [PATCH 01/24] Let system override ro.apex.updatable
@@ -13,7 +13,7 @@ So, ignore the override policy for this prop
  1 file changed, 6 insertions(+), 2 deletions(-)
 
 diff --git a/init/property_service.cpp b/init/property_service.cpp
-index 5fc8039..980379e 100644
+index 09dae22..565b6e9 100644
 --- a/init/property_service.cpp
 +++ b/init/property_service.cpp
 @@ -809,8 +809,12 @@ static void LoadProperties(char* data, const char* filter, const char* filename,

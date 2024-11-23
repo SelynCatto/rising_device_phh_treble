@@ -1,4 +1,4 @@
-From f122e803e10d7c70b3f2b6e1bd820dde51ddbeec Mon Sep 17 00:00:00 2001
+From b229423aac60d7cf033dae37c8e15b32fb9c7764 Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Wed, 2 Aug 2023 20:59:53 +0800
 Subject: [PATCH 33/49] Restore getSimStateForSlotIndex in SubscriptionManager
@@ -36,5 +36,5 @@ index 76b4e0052..6650551d7 100644
       * Set a field in the subscription database. Note not all fields are supported.
       *
 -- 
-2.45.2
+2.39.5
 

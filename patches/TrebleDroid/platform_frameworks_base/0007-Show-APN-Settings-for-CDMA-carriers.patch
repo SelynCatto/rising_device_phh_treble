@@ -1,4 +1,4 @@
-From 5879de92c1cf8499aedaec38c5d3d5f6189e991c Mon Sep 17 00:00:00 2001
+From 1fe20692c189ba1760eae08088a7b9ea2e735c5a Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Mon, 6 Aug 2018 12:49:00 +0200
 Subject: [PATCH 07/49] Show APN Settings for CDMA carriers
@@ -21,5 +21,5 @@ index 72551d3e1..4c1973bfc 100644
          sDefaults.putBoolean(KEY_SMS_REQUIRES_DESTINATION_NUMBER_CONVERSION_BOOL, false);
          sDefaults.putBoolean(KEY_SUPPORT_EMERGENCY_SMS_OVER_IMS_BOOL, false);
 -- 
-2.45.2
+2.39.5
 

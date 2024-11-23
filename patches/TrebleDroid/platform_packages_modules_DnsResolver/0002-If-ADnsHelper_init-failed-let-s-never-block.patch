@@ -1,4 +1,4 @@
-From 80ff6dd9507343f381434d2fb68244f7b73a8f4d Mon Sep 17 00:00:00 2001
+From d20e2bbffe8bb3ed74d5ac4db9786584075df6cf Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Fri, 18 Oct 2024 17:35:01 -0400
 Subject: [PATCH 2/2] If ADnsHelper_init failed, let's never block

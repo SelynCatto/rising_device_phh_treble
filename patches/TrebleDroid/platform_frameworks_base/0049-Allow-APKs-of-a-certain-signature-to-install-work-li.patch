@@ -1,4 +1,4 @@
-From e53dfc6f50179c3ba4eacdaaf8af785a90f99010 Mon Sep 17 00:00:00 2001
+From 6c8c26d550c126b91b64bb92cfd4c40a849bed14 Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Sun, 7 Jul 2024 21:55:42 +0800
 Subject: [PATCH 49/49] Allow APKs of a certain signature to install/work like
@@ -14,7 +14,7 @@ Change-Id: Ia1a13edec8eb8ecf0ea25fffaee4aeff9c75a5e1
  3 files changed, 20 insertions(+), 1 deletion(-)
 
 diff --git a/services/core/java/com/android/server/pm/PackageManagerServiceUtils.java b/services/core/java/com/android/server/pm/PackageManagerServiceUtils.java
-index 0babd99a5..1dd3bf4b9 100644
+index 9b956a923..4f7b05353 100644
 --- a/services/core/java/com/android/server/pm/PackageManagerServiceUtils.java
 +++ b/services/core/java/com/android/server/pm/PackageManagerServiceUtils.java
 @@ -189,6 +189,8 @@ public class PackageManagerServiceUtils {
@@ -89,5 +89,5 @@ index 9ab6016f3..e8d67b1a3 100644
  
          if (!isSystemApp) {
 -- 
-2.45.2
+2.39.5
 

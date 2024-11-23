@@ -1,4 +1,4 @@
-From 0f7a568dff9e2a4618a3ba08a969b1cbaabc86ac Mon Sep 17 00:00:00 2001
+From a1066c923036c08ff2a426f0f0514fb41d7734f0 Mon Sep 17 00:00:00 2001
 From: Raphael Mounier <mounierr07@gmail.com>
 Date: Sun, 21 May 2023 16:15:42 +0200
 Subject: [PATCH 12/24] healthd : offline charger fix screen off 3/3

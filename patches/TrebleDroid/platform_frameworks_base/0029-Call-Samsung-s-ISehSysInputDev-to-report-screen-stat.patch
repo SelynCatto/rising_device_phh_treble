@@ -1,4 +1,4 @@
-From f66d6c9530967ea3f007c266466e9e6cfaadc559 Mon Sep 17 00:00:00 2001
+From ed53fc5c0fdbbac0c2917285183f0d4d153c9098 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 14 Dec 2022 17:21:00 -0500
 Subject: [PATCH 29/49] Call Samsung's ISehSysInputDev to report screen state
@@ -98,5 +98,5 @@ index 44846f310..1b638c8ea 100644
  
                          // If we're entering a suspended (but not OFF) power state and we
 -- 
-2.45.2
+2.39.5
 

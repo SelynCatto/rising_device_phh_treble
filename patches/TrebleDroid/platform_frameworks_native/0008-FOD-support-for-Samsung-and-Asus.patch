@@ -1,4 +1,4 @@
-From 1a2a49e47bd5c67a6908b4012b7160ebcb9f1900 Mon Sep 17 00:00:00 2001
+From 1f9401dbd4993987a23a33a198d3fd0d3c9e1c56 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 18 Dec 2022 18:17:30 -0500
 Subject: [PATCH 08/14] FOD support for Samsung and Asus
@@ -101,7 +101,7 @@ index f1322f1..c3ff48a 100644
  
      // Combinations that are only allowed with gralloc 4.1.
 diff --git a/services/surfaceflinger/CompositionEngine/src/OutputLayer.cpp b/services/surfaceflinger/CompositionEngine/src/OutputLayer.cpp
-index 408c58c..fe6b17f 100644
+index 45f98eb..2388fac 100644
 --- a/services/surfaceflinger/CompositionEngine/src/OutputLayer.cpp
 +++ b/services/surfaceflinger/CompositionEngine/src/OutputLayer.cpp
 @@ -27,6 +27,7 @@

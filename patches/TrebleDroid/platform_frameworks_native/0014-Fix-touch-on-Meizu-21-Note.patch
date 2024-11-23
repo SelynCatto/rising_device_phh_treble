@@ -1,4 +1,4 @@
-From a819d52974c1132d57e83de232c69abed27744ef Mon Sep 17 00:00:00 2001
+From 23539040eeb7b674e79df9822086378ef14f1d0e Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Sat, 17 Aug 2024 20:49:53 +0800
 Subject: [PATCH 14/14] Fix touch on Meizu 21 / Note

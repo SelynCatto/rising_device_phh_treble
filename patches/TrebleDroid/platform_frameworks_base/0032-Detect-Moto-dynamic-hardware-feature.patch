@@ -1,4 +1,4 @@
-From dc1a3088348bdf012c5f5393bc1b554b9a68a963 Mon Sep 17 00:00:00 2001
+From 51d34eb43f3edfe6f295164d56c63c42f479916e Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 5 Jul 2023 10:50:36 -0400
 Subject: [PATCH 32/49] Detect Moto dynamic hardware feature
@@ -44,5 +44,5 @@ index e2ab0d9f2..54abb1c36 100644
                          if (allowOverrideAppRestrictions) {
                              String pkgname = parser.getAttributeValue(null, "package");
 -- 
-2.45.2
+2.39.5
 

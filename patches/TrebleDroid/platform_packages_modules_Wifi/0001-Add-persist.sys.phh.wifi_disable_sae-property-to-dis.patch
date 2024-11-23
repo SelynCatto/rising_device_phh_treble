@@ -1,4 +1,4 @@
-From 7f4c5751690355eb2a145aaa1b1532f2d4dbeb66 Mon Sep 17 00:00:00 2001
+From 2788535d9d1bf4a90364bb66fa53122afd1f258e Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 21 Feb 2024 17:26:07 -0500
 Subject: [PATCH] Add persist.sys.phh.wifi_disable_sae property to disable

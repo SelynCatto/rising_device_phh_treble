@@ -1,4 +1,4 @@
-From fa522723fada152ff2bb644439ab73e22893537f Mon Sep 17 00:00:00 2001
+From f9f62772909ba072a93a04c41d0bb4d8cad2a9a7 Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Wed, 8 Dec 2021 07:04:53 +0000
 Subject: [PATCH 1/4] Remove init.vndk-nodef.rc
@@ -72,5 +72,5 @@ index da1284e..61337e1 100644
  # Overlay the GSI specific SystemUI setting
  ifneq ($(PRODUCT_IS_AUTOMOTIVE),true)
 -- 
-2.45.2
+2.39.5
 

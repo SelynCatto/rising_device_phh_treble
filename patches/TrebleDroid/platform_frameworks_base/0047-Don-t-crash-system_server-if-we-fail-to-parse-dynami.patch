@@ -1,4 +1,4 @@
-From ef620d3a972a9068de232dcb08c869970455f8df Mon Sep 17 00:00:00 2001
+From fb7aae150a779570e1fc438162aef8ec570b4818 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 17 Apr 2024 04:49:18 -0400
 Subject: [PATCH 47/49] Don't crash system_server if we fail to parse dynamic
@@ -38,5 +38,5 @@ index 0a914428a..b0033c189 100644
          }
  
 -- 
-2.45.2
+2.39.5
 

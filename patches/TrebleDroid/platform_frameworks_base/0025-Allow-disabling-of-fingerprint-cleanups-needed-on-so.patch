@@ -1,4 +1,4 @@
-From 581722b2c5749fe15b160a67519d5ee799ddfe31 Mon Sep 17 00:00:00 2001
+From 789ccda3d031120a07c3e77f9c8470ed9e2c46f5 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 2 Apr 2022 18:04:01 -0400
 Subject: [PATCH 25/49] Allow disabling of fingerprint cleanups, needed on some
@@ -22,5 +22,5 @@ index 12baf00c1..8e8edb385 100644
              final FingerprintInternalCleanupClient client =
                      new FingerprintInternalCleanupClient(mContext,
 -- 
-2.45.2
+2.39.5
 

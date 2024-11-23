@@ -1,4 +1,4 @@
-From a81593ec596be03f889c6ec68f8a6a3b453efc6a Mon Sep 17 00:00:00 2001
+From a75fd66396b84c1df38624cfbbac998004d636f3 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Thu, 17 Oct 2024 06:59:48 -0400
 Subject: [PATCH 7/7] Additional bpf prevent-crash

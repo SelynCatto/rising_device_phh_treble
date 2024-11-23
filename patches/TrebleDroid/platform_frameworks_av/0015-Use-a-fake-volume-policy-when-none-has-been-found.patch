@@ -1,4 +1,4 @@
-From f6a69ff61edeb1a18a943bc334f8a71165108397 Mon Sep 17 00:00:00 2001
+From 622a805946d7cfd94d3740829783d68dbebdc3fe Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 28 Mar 2021 14:48:49 +0200
 Subject: [PATCH 15/23] Use a fake volume policy when none has been found
@@ -33,5 +33,5 @@ index 3f9ae19..c6ae455 100644
          ALOGE("No readable audio policy config file found");
          return BAD_VALUE;
 -- 
-2.45.2
+2.39.5
 

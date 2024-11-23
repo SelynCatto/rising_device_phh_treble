@@ -1,4 +1,4 @@
-From e143e502b48b64e5835dd4e933dbc75d97ba62e7 Mon Sep 17 00:00:00 2001
+From 9334162940d7720436061374d26d45d1dd0041c2 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 10 Dec 2023 18:04:49 -0500
 Subject: [PATCH 41/49] Add support for Samsung full brightness on their AIDL
@@ -106,5 +106,5 @@ index 39c4e361e..57d824d57 100644
          mManagerService = new LightsManagerBinderService();
      }
 -- 
-2.45.2
+2.39.5
 

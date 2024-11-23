@@ -1,4 +1,4 @@
-From 02154055ef658da2bf6093f7cdf963ab25b8da92 Mon Sep 17 00:00:00 2001
+From 533e2d2f4849ab17355920173e604d9f7d2a5090 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 9 Sep 2020 22:36:42 +0200
 Subject: [PATCH 02/10] Revert "libsepol: Make an unknown permission an error

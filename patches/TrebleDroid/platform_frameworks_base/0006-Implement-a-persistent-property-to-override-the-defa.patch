@@ -1,4 +1,4 @@
-From 9d90e708dd6ee4dfe708c1aa72d84d01b0d609cf Mon Sep 17 00:00:00 2001
+From 62b7b1d62b709d83874791b60ff47b87337c6517 Mon Sep 17 00:00:00 2001
 From: Peter Cai <peter@typeblog.net>
 Date: Wed, 1 Jun 2022 16:56:20 -0400
 Subject: [PATCH 06/49] Implement a persistent property to override the default
@@ -47,5 +47,5 @@ index 64cb64489..f5b242330 100644
  
          private boolean shouldHideCamera(int currentDeviceId, int devicePolicy,
 -- 
-2.45.2
+2.39.5
 

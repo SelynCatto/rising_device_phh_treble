@@ -1,4 +1,4 @@
-From 9fd8542adf96f356b245fc1c2305f5a35e5ae171 Mon Sep 17 00:00:00 2001
+From 6abd5ebebb15e4738feba2e90ab9d98c1cd494b0 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 7 Feb 2024 05:06:32 -0500
 Subject: [PATCH 22/23] Include Samsung AIDL camera ids
@@ -60,5 +60,5 @@ index e76b750..d877bca 100644
          uint16_t major, minor;
          std::string type, id;
 -- 
-2.45.2
+2.39.5
 

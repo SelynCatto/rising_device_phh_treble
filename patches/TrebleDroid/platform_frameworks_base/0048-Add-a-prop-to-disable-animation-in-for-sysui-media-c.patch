@@ -1,4 +1,4 @@
-From 934bd19957f16537f2a485afdc9741319429d3fd Mon Sep 17 00:00:00 2001
+From 79d6e80c48b3cba609dee73e24e50a8eaa2df918 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 8 May 2024 11:55:07 -0400
 Subject: [PATCH 48/49] Add a prop to disable animation in for sysui media
@@ -9,7 +9,7 @@ Subject: [PATCH 48/49] Add a prop to disable animation in for sysui media
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt b/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
-index e60d8e5d4..26b44c1a4 100644
+index 53794d2d2..2e32330ba 100644
 --- a/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
 +++ b/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
 @@ -22,6 +22,7 @@ import android.content.Intent
@@ -30,5 +30,5 @@ index e60d8e5d4..26b44c1a4 100644
                                  duration = duration,
                                  delay = startDelay
 -- 
-2.45.2
+2.39.5
 

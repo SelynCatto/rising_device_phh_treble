@@ -1,4 +1,4 @@
-From acdd74a596d215027b00e0dcf1e33734fc971bfb Mon Sep 17 00:00:00 2001
+From 7d567dbc2131c20091ac1fcd2ad9002cdbeccc4d Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Mon, 29 Jan 2024 17:15:38 -0500
 Subject: [PATCH 43/49] Bunch of FOD stuff -- commonize refreshing the
@@ -9,7 +9,7 @@ Subject: [PATCH 43/49] Bunch of FOD stuff -- commonize refreshing the
  1 file changed, 137 insertions(+), 19 deletions(-)
 
 diff --git a/services/core/java/com/android/server/biometrics/AuthService.java b/services/core/java/com/android/server/biometrics/AuthService.java
-index 5762ebcce..9ac961816 100644
+index 271ba9b1f..710b1a898 100644
 --- a/services/core/java/com/android/server/biometrics/AuthService.java
 +++ b/services/core/java/com/android/server/biometrics/AuthService.java
 @@ -43,6 +43,7 @@ import android.hardware.biometrics.IAuthService;
@@ -173,7 +173,7 @@ index 5762ebcce..9ac961816 100644
                      Slog.d("PHH-Enroll", "New actual mask brightness is " + actualMask);
                      try {
                          int eventReq = 0;
-@@ -1135,22 +1222,53 @@ public class AuthService extends SystemService {
+@@ -1134,22 +1221,53 @@ public class AuthService extends SystemService {
              udfpsProps[2] = (int)mW;
  
              try {
@@ -231,5 +231,5 @@ index 5762ebcce..9ac961816 100644
                  Slog.d("PHH-Enroll", "Failed setting samsung3.0 fingerprint recognition", e);
              }
 -- 
-2.45.2
+2.39.5
 
