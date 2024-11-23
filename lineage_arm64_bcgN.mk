@@ -17,7 +17,7 @@ PRODUCT_MODEL := GSI Core
 # Rising stuff
 RISING_MAINTAINER=UniversalX
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    RisingMaintainer="UniversalX"
+    RisingMaintainer="Selyn"
 
 TARGET_ENABLE_BLUR := false
 PRODUCT_NO_CAMERA := false

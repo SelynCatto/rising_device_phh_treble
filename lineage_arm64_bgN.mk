@@ -17,7 +17,7 @@ PRODUCT_MODEL := GSI Gapps
 # Rising stuff
 RISING_MAINTAINER := UniversalX
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    RISING_MAINTAINER="UniversalX"
+    RisingMaintainer="Selyn"
 
 TARGET_ENABLE_BLUR := false
 PRODUCT_NO_CAMERA := false
@@ -28,7 +28,8 @@ WITH_GMS := true
 #TARGET_CORE_GMS := true
 #Uncomment for core+ build
 #TARGET_CORE_GMS_EXTRAS := true
-TARGET_DEFAULT_PIXEL_LAUNCHER := false
+TARGET_DEFAULT_PIXEL_LAUNCHER := true
+
 
 # Overwrite the inherited "emulator" characteristics
 PRODUCT_CHARACTERISTICS := device

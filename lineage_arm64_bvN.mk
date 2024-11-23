@@ -19,12 +19,12 @@ PRODUCT_MODEL := GSI
 # Rising stuff
 RISING_MAINTAINER=UniversalX
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    RISING_MAINTAINER="UniversalX"
+    RisingMaintainer="Selyn"
 
 TARGET_ENABLE_BLUR := false
 PRODUCT_NO_CAMERA := false
 
-RISING_PACKAGE_TYPE := "VANILLA_AOSP"
+WITH_GMS := false
 
 # Overwrite the inherited "emulator" characteristics
 PRODUCT_CHARACTERISTICS := device
