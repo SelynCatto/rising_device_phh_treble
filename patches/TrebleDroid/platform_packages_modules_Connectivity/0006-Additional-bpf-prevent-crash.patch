@@ -1,7 +1,7 @@
-From a75fd66396b84c1df38624cfbbac998004d636f3 Mon Sep 17 00:00:00 2001
+From 289b7bda0142676cc5bf2da22ea8c5e664b30f5a Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Thu, 17 Oct 2024 06:59:48 -0400
-Subject: [PATCH 7/7] Additional bpf prevent-crash
+Subject: [PATCH 6/7] Additional bpf prevent-crash
 
 ---
  framework/src/android/net/BpfNetMapsUtils.java           | 9 ++++-----

@@ -1,7 +1,7 @@
-From de9197b97fc7b4026d566c3f87354931241756ef Mon Sep 17 00:00:00 2001
+From 858b1b2e96d76b36fb8b6ccc21042f464e6af530 Mon Sep 17 00:00:00 2001
 From: Andy CrossGate Yan <GeForce8800Ultra@gmail.com>
 Date: Thu, 14 Oct 2021 12:20:52 +0000
-Subject: [PATCH 2/4] build: Remove llkd
+Subject: [PATCH 2/3] build: Remove llkd
 
 ...until someone figures out why Genshin Impact fails it
 

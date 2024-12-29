@@ -1,4 +1,4 @@
-From 8823d91a09dc9c93e0946e3867c301c158311fae Mon Sep 17 00:00:00 2001
+From d75e12bc8286a96acf408022acd37291dd04379a Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 17 Jun 2023 08:31:55 -0400
 Subject: [PATCH 31/49] Add Mediatek power hints on touch
@@ -27,10 +27,10 @@ Change-Id: I9f1eac5a20b98920a5d0c8204fe4d165ba069f5a
  2 files changed, 52 insertions(+), 1 deletion(-)
 
 diff --git a/services/core/Android.bp b/services/core/Android.bp
-index 89b3c1224..1ade7bc61 100644
+index 9aedf248d..271f1f62a 100644
 --- a/services/core/Android.bp
 +++ b/services/core/Android.bp
-@@ -230,7 +230,9 @@ java_library_static {
+@@ -231,7 +231,9 @@ java_library_static {
          "aconfig_new_storage_flags_lib",
          "powerstats_flags_lib",
          "vendor.aospa.biometrics.face",

@@ -1,4 +1,4 @@
-From 1f9401dbd4993987a23a33a198d3fd0d3c9e1c56 Mon Sep 17 00:00:00 2001
+From def98b3fd833e5a0a906b953901cbe85223f8776 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 18 Dec 2022 18:17:30 -0500
 Subject: [PATCH 08/14] FOD support for Samsung and Asus
@@ -237,7 +237,7 @@ index 5b94831..bb55f0e 100644
      // These are references to data owned by HWComposer, which will outlive
      // this HWC2::Layer, so these references are guaranteed to be valid for
 diff --git a/services/surfaceflinger/DisplayHardware/HidlComposerHal.cpp b/services/surfaceflinger/DisplayHardware/HidlComposerHal.cpp
-index 12ab2c2..d34ed04 100644
+index be95913..ee77e54 100644
 --- a/services/surfaceflinger/DisplayHardware/HidlComposerHal.cpp
 +++ b/services/surfaceflinger/DisplayHardware/HidlComposerHal.cpp
 @@ -1435,6 +1435,13 @@ Error HidlComposer::getPhysicalDisplayOrientation(Display, AidlTransform*) {

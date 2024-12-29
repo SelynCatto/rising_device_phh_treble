@@ -1,7 +1,7 @@
-From 5bc6596dc9581754712ffe092dc0cf2db5eebe21 Mon Sep 17 00:00:00 2001
+From e9765268b80dfb4b3f8d8754f24fa6f4918cd9b4 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Mon, 30 Oct 2023 10:30:58 -0400
-Subject: [PATCH 20/23] Add a prop to disable AUDIO_OUTPUT_FLAG_FAST from audio
+Subject: [PATCH 20/24] Add a prop to disable AUDIO_OUTPUT_FLAG_FAST from audio
  policies, when CPU can't really handle that kind of load
 
 ---

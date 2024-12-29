@@ -1,4 +1,4 @@
-From 0f1ce9d59a73b195aed86a00fb55c1a7b806eb7e Mon Sep 17 00:00:00 2001
+From 5ffaff24cd0dce3a66c5ae16d157901f47d0f917 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 31 Mar 2021 23:36:03 +0200
 Subject: [PATCH 04/14] Remove Samsung system permission on sensors

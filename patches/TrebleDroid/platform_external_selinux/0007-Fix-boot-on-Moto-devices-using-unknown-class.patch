@@ -1,7 +1,7 @@
-From b49a27b917cd492da2da081dde2c821227e8524b Mon Sep 17 00:00:00 2001
+From b4aeb1aa56c5f1fe72f6369bd38e0d2b317cca9d Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Fri, 25 Oct 2019 13:29:20 +0200
-Subject: [PATCH 07/10] Fix boot on Moto devices using unknown class
+Subject: [PATCH 07/11] Fix boot on Moto devices using unknown class
 
 vendor sepolicy never contains new class or classorder, and are not
 allowed to.

@@ -1,4 +1,4 @@
-From fb7aae150a779570e1fc438162aef8ec570b4818 Mon Sep 17 00:00:00 2001
+From aba9a3dcfc4b18943bb568085043794b4ec224f5 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 17 Apr 2024 04:49:18 -0400
 Subject: [PATCH 47/49] Don't crash system_server if we fail to parse dynamic
@@ -9,10 +9,10 @@ Subject: [PATCH 47/49] Don't crash system_server if we fail to parse dynamic
  1 file changed, 11 insertions(+), 7 deletions(-)
 
 diff --git a/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintProvider.java b/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintProvider.java
-index 0a914428a..b0033c189 100644
+index a406c1100..7631e9b72 100644
 --- a/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintProvider.java
 +++ b/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintProvider.java
-@@ -255,13 +255,17 @@ public class FingerprintProvider implements IBinder.DeathRecipient, ServiceProvi
+@@ -260,13 +260,17 @@ public class FingerprintProvider implements IBinder.DeathRecipient, ServiceProvi
              android.util.Log.e("PHH-Enroll", " - " + loc.sensorLocationX + ", " + loc.sensorLocationY + ", " +loc.sensorRadius + ", disp =" + loc.display + ", shape " + loc.sensorShape);
          }
          if (prop.sensorLocations.length == 1 && prop.sensorLocations[0].sensorLocationX == 0) {

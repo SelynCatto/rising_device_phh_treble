@@ -1,4 +1,4 @@
-From 59be9e969bcc526ac040f17e9f7a35f70d4d33f8 Mon Sep 17 00:00:00 2001
+From d3c1eef80acb56fe349935d5c4dce4a79880be26 Mon Sep 17 00:00:00 2001
 From: Peter Cai <peter@typeblog.net>
 Date: Mon, 5 Sep 2022 14:02:37 -0400
 Subject: [PATCH 1/9] SubscriptionController: Do not override default calling

@@ -1,4 +1,4 @@
-From 79d6e80c48b3cba609dee73e24e50a8eaa2df918 Mon Sep 17 00:00:00 2001
+From 3d5a836534267fc0d9287a17cbd621f9c5ad99a2 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 8 May 2024 11:55:07 -0400
 Subject: [PATCH 48/49] Add a prop to disable animation in for sysui media
@@ -9,7 +9,7 @@ Subject: [PATCH 48/49] Add a prop to disable animation in for sysui media
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt b/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
-index 53794d2d2..2e32330ba 100644
+index ea217af24..fd65f8dc9 100644
 --- a/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
 +++ b/packages/SystemUI/src/com/android/systemui/media/controls/ui/controller/MediaCarouselController.kt
 @@ -22,6 +22,7 @@ import android.content.Intent
@@ -20,7 +20,7 @@ index 53794d2d2..2e32330ba 100644
  import android.os.UserHandle
  import android.provider.Settings
  import android.provider.Settings.ACTION_MEDIA_CONTROLS_SETTINGS
-@@ -1365,7 +1366,7 @@ constructor(
+@@ -1409,7 +1410,7 @@ constructor(
  
                  if (!mediaFlags.isSceneContainerEnabled()) {
                      for (mediaPlayer in MediaPlayerData.players()) {

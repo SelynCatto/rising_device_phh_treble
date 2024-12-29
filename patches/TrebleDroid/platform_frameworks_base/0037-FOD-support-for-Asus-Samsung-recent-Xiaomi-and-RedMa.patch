@@ -1,4 +1,4 @@
-From a23a52dcf57e88f9de4b9f1cd88fbb8e19e51705 Mon Sep 17 00:00:00 2001
+From c68061c996b8f7195b7217c3c90862b42fd7d776 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 18 Dec 2022 18:20:40 -0500
 Subject: [PATCH 37/49] FOD support for Asus, Samsung recent Xiaomi and
@@ -33,9 +33,9 @@ Change-Id: I7af81218276c60afbfea6dac702c7bcd584f397a
  .../android/systemui/biometrics/UdfpsView.kt  | 231 +++++++++++++
  .../shared/DeviceEntryUdfpsRefactor.kt        |   2 +-
  services/core/Android.bp                      |   5 +
- .../server/biometrics/AuthService.java        | 307 +++++++++++++++++-
+ .../server/biometrics/AuthService.java        | 306 +++++++++++++++++-
  .../fingerprint/aidl/FingerprintProvider.java |  23 ++
- 8 files changed, 642 insertions(+), 14 deletions(-)
+ 8 files changed, 642 insertions(+), 13 deletions(-)
 
 diff --git a/packages/SystemUI/Android.bp b/packages/SystemUI/Android.bp
 index dd5c9d0fa..bc86696f1 100644
@@ -222,7 +222,7 @@ index bf89cbb78..3f8137091 100644
                  cb.onFingerUp();
              }
 diff --git a/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt b/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt
-index 52aedf4dd..fe91f9d2e 100644
+index f6656155d..f118d4e3d 100644
 --- a/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt
 +++ b/packages/SystemUI/src/com/android/systemui/biometrics/UdfpsControllerOverlay.kt
 @@ -178,7 +178,9 @@ class UdfpsControllerOverlay @JvmOverloads constructor(
@@ -540,10 +540,10 @@ index b5d5803ca..68f74f3ed 100644
      /**
       * Called to ensure code is only run when the flag is enabled. This protects users from the
 diff --git a/services/core/Android.bp b/services/core/Android.bp
-index 1ade7bc61..6c0659873 100644
+index 271f1f62a..aef34ef01 100644
 --- a/services/core/Android.bp
 +++ b/services/core/Android.bp
-@@ -233,6 +233,11 @@ java_library_static {
+@@ -234,6 +234,11 @@ java_library_static {
          // HIDL
          "vendor.mediatek.hardware.mtkpower-V1.1-java",
          "vendor.samsung.hardware.sysinput-V1.2-java",
@@ -556,10 +556,10 @@ index 1ade7bc61..6c0659873 100644
      javac_shard_size: 50,
      javacflags: [
 diff --git a/services/core/java/com/android/server/biometrics/AuthService.java b/services/core/java/com/android/server/biometrics/AuthService.java
-index 1922e8988..271ba9b1f 100644
+index 82ed892a5..1d93567e9 100644
 --- a/services/core/java/com/android/server/biometrics/AuthService.java
 +++ b/services/core/java/com/android/server/biometrics/AuthService.java
-@@ -81,6 +81,25 @@ import java.util.ArrayList;
+@@ -83,6 +83,25 @@ import java.util.ArrayList;
  import java.util.Arrays;
  import java.util.List;
  
@@ -585,7 +585,7 @@ index 1922e8988..271ba9b1f 100644
  /**
   * System service that provides an interface for authenticating with biometrics and
   * PIN/pattern/password to BiometricPrompt and lock screen.
-@@ -99,6 +118,11 @@ public class AuthService extends SystemService {
+@@ -101,6 +120,11 @@ public class AuthService extends SystemService {
      @VisibleForTesting
      final IAuthService.Stub mImpl;
  
@@ -597,7 +597,7 @@ index 1922e8988..271ba9b1f 100644
      /**
       * Class for injecting dependencies into AuthService.
       * TODO(b/141025588): Replace with a dependency injection framework (e.g. Guice, Dagger).
-@@ -761,11 +785,11 @@ public class AuthService extends SystemService {
+@@ -763,11 +787,11 @@ public class AuthService extends SystemService {
              final int firstApiLevel = SystemProperties.getInt(SYSPROP_FIRST_API_LEVEL, 0);
              final int apiLevel = SystemProperties.getInt(SYSPROP_API_LEVEL, firstApiLevel);
              String[] configStrings = mInjector.getConfiguration(getContext());
@@ -611,7 +611,7 @@ index 1922e8988..271ba9b1f 100644
                  configStrings = generateRSdkCompatibleConfiguration();
              }
              hidlConfigs = new SensorConfig[configStrings.length];
-@@ -778,6 +802,102 @@ public class AuthService extends SystemService {
+@@ -780,6 +804,102 @@ public class AuthService extends SystemService {
  
          registerAuthenticators();
          mInjector.publishBinderService(this, mImpl);
@@ -714,11 +714,10 @@ index 1922e8988..271ba9b1f 100644
      }
  
      private void registerAuthenticators() {
-@@ -891,16 +1011,13 @@ public class AuthService extends SystemService {
-         }
+@@ -894,15 +1014,13 @@ public class AuthService extends SystemService {
  
          handlerProvider.getFingerprintHandler().post(() -> {
--            final FingerprintSensorConfigurations mFingerprintSensorConfigurations =
+             final FingerprintSensorConfigurations mFingerprintSensorConfigurations =
 -                    new FingerprintSensorConfigurations(!(hidlConfigStrings != null
 -                            && hidlConfigStrings.length > 0));
 -
@@ -735,7 +734,7 @@ index 1922e8988..271ba9b1f 100644
              }
  
              if (fingerprintService != null) {
-@@ -969,14 +1086,119 @@ public class AuthService extends SystemService {
+@@ -971,18 +1089,123 @@ public class AuthService extends SystemService {
                  ? modality : (modality & ~BiometricAuthenticator.TYPE_CREDENTIAL);
      }
  
@@ -840,6 +839,10 @@ index 1922e8988..271ba9b1f 100644
 +        int[] udfpsProps = getContext().getResources().getIntArray(
                  com.android.internal.R.array.config_udfps_sensor_props);
  
+         // Non-empty workaroundLocations indicates that the sensor is SFPS.
+         final List<SensorLocationInternal> workaroundLocations =
+                 getWorkaroundSensorProps(getContext());
+ 
 -        final boolean isUdfps = !ArrayUtils.isEmpty(udfpsProps);
 +        boolean isUdfps = !ArrayUtils.isEmpty(udfpsProps);
 +        if(!isUdfps) {
@@ -857,7 +860,7 @@ index 1922e8988..271ba9b1f 100644
  
          // config_is_powerbutton_fps indicates whether device has a power button fingerprint sensor.
          final boolean isPowerbuttonFps = getContext().getResources().getBoolean(
-@@ -1038,4 +1260,67 @@ public class AuthService extends SystemService {
+@@ -1050,4 +1273,67 @@ public class AuthService extends SystemService {
                  componentInfo, resetLockoutRequiresHardwareAuthToken,
                  resetLockoutRequiresChallenge);
      }
@@ -926,7 +929,7 @@ index 1922e8988..271ba9b1f 100644
 +    }
  }
 diff --git a/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintProvider.java b/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintProvider.java
-index 8e8edb385..0a914428a 100644
+index 2268a8c46..a406c1100 100644
 --- a/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintProvider.java
 +++ b/services/core/java/com/android/server/biometrics/sensors/fingerprint/aidl/FingerprintProvider.java
 @@ -37,6 +37,7 @@ import android.hardware.biometrics.fingerprint.IFingerprint;
@@ -937,7 +940,7 @@ index 8e8edb385..0a914428a 100644
  import android.hardware.fingerprint.Fingerprint;
  import android.hardware.fingerprint.FingerprintAuthenticateOptions;
  import android.hardware.fingerprint.FingerprintEnrollOptions;
-@@ -236,6 +237,7 @@ public class FingerprintProvider implements IBinder.DeathRecipient, ServiceProvi
+@@ -241,6 +242,7 @@ public class FingerprintProvider implements IBinder.DeathRecipient, ServiceProvi
              Slog.d(getTag(), "Adding AIDL configs");
              final List<SensorLocationInternal> workaroundLocations =
                      getWorkaroundSensorProps(mContext);
@@ -945,7 +948,7 @@ index 8e8edb385..0a914428a 100644
              for (SensorProps prop : props) {
                  addAidlSensors(prop, gestureAvailabilityDispatcher, workaroundLocations,
                          resetLockoutRequiresHardwareAuthToken);
-@@ -247,6 +249,27 @@ public class FingerprintProvider implements IBinder.DeathRecipient, ServiceProvi
+@@ -252,6 +254,27 @@ public class FingerprintProvider implements IBinder.DeathRecipient, ServiceProvi
              @NonNull GestureAvailabilityDispatcher gestureAvailabilityDispatcher,
              boolean resetLockoutRequiresHardwareAuthToken) {
          final int sensorId = prop.commonProps.sensorId;

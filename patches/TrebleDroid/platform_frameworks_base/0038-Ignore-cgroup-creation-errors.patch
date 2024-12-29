@@ -1,4 +1,4 @@
-From 85aacd3309e3a579008320e51d2d9243cd12c7ab Mon Sep 17 00:00:00 2001
+From fd0de2b15fdede7c9b3060fa13997c65defd1ccf Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 18 Oct 2023 16:53:40 -0400
 Subject: [PATCH 38/49] Ignore cgroup creation errors
@@ -27,7 +27,7 @@ index 062fab386..f4fb7508f 100644
      }
  
 diff --git a/services/core/java/com/android/server/am/ProcessList.java b/services/core/java/com/android/server/am/ProcessList.java
-index c0947247d..ce1b828b5 100644
+index 5d8f4ee81..8d324b4e9 100644
 --- a/services/core/java/com/android/server/am/ProcessList.java
 +++ b/services/core/java/com/android/server/am/ProcessList.java
 @@ -2578,14 +2578,9 @@ public final class ProcessList {

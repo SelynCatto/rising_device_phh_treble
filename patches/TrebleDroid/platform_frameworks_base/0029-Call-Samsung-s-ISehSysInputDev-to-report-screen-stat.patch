@@ -1,4 +1,4 @@
-From ed53fc5c0fdbbac0c2917285183f0d4d153c9098 Mon Sep 17 00:00:00 2001
+From cd3493d85723d3573cd43ab6e02558a4e17e90e8 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 14 Dec 2022 17:21:00 -0500
 Subject: [PATCH 29/49] Call Samsung's ISehSysInputDev to report screen state
@@ -13,10 +13,10 @@ Change-Id: If2d74b97a51b19c730a6f9a1b1f4293d1469a9f8
  2 files changed, 32 insertions(+)
 
 diff --git a/services/core/Android.bp b/services/core/Android.bp
-index 91906895e..89b3c1224 100644
+index 38319006d..9aedf248d 100644
 --- a/services/core/Android.bp
 +++ b/services/core/Android.bp
-@@ -230,6 +230,7 @@ java_library_static {
+@@ -231,6 +231,7 @@ java_library_static {
          "aconfig_new_storage_flags_lib",
          "powerstats_flags_lib",
          "vendor.aospa.biometrics.face",

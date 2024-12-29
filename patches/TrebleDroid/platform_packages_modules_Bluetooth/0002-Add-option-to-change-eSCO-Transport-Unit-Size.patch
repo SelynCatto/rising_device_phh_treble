@@ -1,4 +1,4 @@
-From b5a51624cf8c58a4945397a4ceb51cfd408e1bdd Mon Sep 17 00:00:00 2001
+From d2401b47ea328478374b420bc5cfaa62eed94592 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Thu, 17 Jun 2021 15:48:53 +0100
 Subject: [PATCH 2/7] Add option to change eSCO Transport Unit Size

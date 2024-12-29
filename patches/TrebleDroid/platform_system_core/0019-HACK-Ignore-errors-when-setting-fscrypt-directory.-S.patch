@@ -1,4 +1,4 @@
-From 1a8faf43b034dcef81e80327f915d6da61a221f7 Mon Sep 17 00:00:00 2001
+From 533d0c08d491a0a86dbbadfa70f83e95fa1366bb Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Thu, 23 Nov 2023 11:05:20 -0500
 Subject: [PATCH 19/24] HACK: Ignore errors when setting fscrypt directory.

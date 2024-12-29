@@ -1,4 +1,4 @@
-From 7df71dd973725f02bcd111d9b253f9dad240a3a7 Mon Sep 17 00:00:00 2001
+From ff87f5dba3803e8d2839ec2e5fe01cf487a6197b Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 26 Oct 2022 18:10:04 -0400
 Subject: [PATCH 1/7] Allow failing to load bpf programs, for BPF-less devices

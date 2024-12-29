@@ -1,4 +1,4 @@
-From ae86e738c80f7722f921024fc0c6d5b91ccf3f40 Mon Sep 17 00:00:00 2001
+From a6ba1dc33ff361fbe9105949a9d15289be7b9da1 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 2 Apr 2024 16:53:08 -0400
 Subject: [PATCH 24/24] Flattened apexes no longer exist, we'll deal with it

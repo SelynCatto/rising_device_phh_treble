@@ -1,4 +1,4 @@
-From efd6538c18ffa6685f282eba3bcdf5087d8f90a0 Mon Sep 17 00:00:00 2001
+From c8020d7d9efc4225e25894266c6be63365e87ea4 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 18 Oct 2023 16:57:34 -0400
 Subject: [PATCH 39/49] Samsung tablets use SW_MACHINE_COVER rather than SW_LID

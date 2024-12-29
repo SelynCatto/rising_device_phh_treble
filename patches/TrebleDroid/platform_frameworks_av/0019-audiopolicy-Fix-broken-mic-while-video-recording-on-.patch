@@ -1,7 +1,7 @@
-From c67f83af26669c3ceadbc484e99eb847474521fc Mon Sep 17 00:00:00 2001
+From ca80e8dcbcf6920318d5ae14a0a801f101fee977 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Sun, 30 Apr 2023 23:29:04 +0100
-Subject: [PATCH 19/23] audiopolicy: Fix broken mic while video recording on
+Subject: [PATCH 19/24] audiopolicy: Fix broken mic while video recording on
  some Exynos devices
 
 This should fix https://github.com/phhusson/treble_experimentations/issues/2021 and https://github.com/phhusson/treble_experimentations/issues/2384.

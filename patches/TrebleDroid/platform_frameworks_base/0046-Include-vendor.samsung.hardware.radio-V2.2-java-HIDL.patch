@@ -1,4 +1,4 @@
-From 958bc53bf7976170e815bf4b22a85efbdda63c9d Mon Sep 17 00:00:00 2001
+From ffa3ce2a3d1dec2c26f4c6295c443f558d42537b Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 21 Feb 2024 16:19:47 -0500
 Subject: [PATCH 46/49] Include vendor.samsung.hardware.radio-V2.2-java HIDL in
@@ -9,10 +9,10 @@ Subject: [PATCH 46/49] Include vendor.samsung.hardware.radio-V2.2-java HIDL in
  1 file changed, 1 insertion(+)
 
 diff --git a/Android.bp b/Android.bp
-index 45eeee37c..9838f573c 100644
+index 4360c6754..66d288975 100644
 --- a/Android.bp
 +++ b/Android.bp
-@@ -234,6 +234,7 @@ java_library {
+@@ -235,6 +235,7 @@ java_library {
          "android.hardware.gnss-V2.1-java",
          "android.hardware.health-V1.0-java-constants",
          "android.hardware.radio-V1.6-java",

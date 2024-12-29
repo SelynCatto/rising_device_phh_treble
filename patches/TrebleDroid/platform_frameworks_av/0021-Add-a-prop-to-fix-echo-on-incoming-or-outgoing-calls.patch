@@ -1,7 +1,7 @@
-From 0bb3127e865678eee4a6e26c5d070e783ee35948 Mon Sep 17 00:00:00 2001
+From 9bb7a392ac89d320f4bd32ef692080810ba17a99 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Sun, 5 Nov 2023 15:18:03 +0000
-Subject: [PATCH 21/23] Add a prop to fix echo on incoming or outgoing calls
+Subject: [PATCH 21/24] Add a prop to fix echo on incoming or outgoing calls
 
 May even fix audio calls altogether.
 

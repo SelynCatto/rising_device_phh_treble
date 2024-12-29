@@ -1,4 +1,4 @@
-From 2cc3b1a09cc672d80c60a417cca852497809174d Mon Sep 17 00:00:00 2001
+From ccac99202578f3a85e034ae03bbd52367062a718 Mon Sep 17 00:00:00 2001
 From: Christian Hoffmann <chrmhoffmann@gmail.com>
 Date: Fri, 21 Oct 2022 12:58:04 +0200
 Subject: [PATCH 5/9] Fix NPE with 1.0 and 1.1 CardStatus
