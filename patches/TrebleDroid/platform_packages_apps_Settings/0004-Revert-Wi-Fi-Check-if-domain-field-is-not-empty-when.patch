@@ -1,4 +1,4 @@
-From da5cfe26956927b347a311ecc550b62e60be3b4f Mon Sep 17 00:00:00 2001
+From c2ff1bffee3d6be78ecbe93b61ce61fa0b485868 Mon Sep 17 00:00:00 2001
 From: Alberto Ponces <ponces26@gmail.com>
 Date: Thu, 2 Nov 2023 10:23:56 +0000
 Subject: [PATCH 4/4] Revert "[Wi-Fi] Check if domain field is not empty when
@@ -46,7 +46,7 @@ index 7a565d8..2a828e7 100644
              }
          }
 diff --git a/src/com/android/settings/wifi/WifiConfigController2.java b/src/com/android/settings/wifi/WifiConfigController2.java
-index 6393e03..49482fd 100644
+index 347e943..ddd5610 100644
 --- a/src/com/android/settings/wifi/WifiConfigController2.java
 +++ b/src/com/android/settings/wifi/WifiConfigController2.java
 @@ -568,11 +568,11 @@ public class WifiConfigController2 implements TextWatcher,
@@ -81,5 +81,5 @@ index 6393e03..49482fd 100644
              }
          }
 -- 
-2.39.5
+2.25.1
 

@@ -1,7 +1,7 @@
-From 289b7bda0142676cc5bf2da22ea8c5e664b30f5a Mon Sep 17 00:00:00 2001
+From 08a5e775edecef93f1745cd9d503496c72887a8d Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Thu, 17 Oct 2024 06:59:48 -0400
-Subject: [PATCH 6/7] Additional bpf prevent-crash
+Subject: [PATCH 7/7] Additional bpf prevent-crash
 
 ---
  framework/src/android/net/BpfNetMapsUtils.java           | 9 ++++-----
@@ -10,13 +10,13 @@ Subject: [PATCH 6/7] Additional bpf prevent-crash
  3 files changed, 7 insertions(+), 6 deletions(-)
 
 diff --git a/framework/src/android/net/BpfNetMapsUtils.java b/framework/src/android/net/BpfNetMapsUtils.java
-index 874a1f8..db13b14 100644
+index 408294c..287116a 100644
 --- a/framework/src/android/net/BpfNetMapsUtils.java
 +++ b/framework/src/android/net/BpfNetMapsUtils.java
-@@ -265,15 +265,14 @@ public class BpfNetMapsUtils {
-             IBpfMap<S32, UidOwnerValue> uidOwnerMap,
-             IBpfMap<S32, U8> dataSaverEnabledMap
-     ) {
+@@ -271,15 +271,14 @@ public class BpfNetMapsUtils {
+             return BLOCKED_REASON_NONE;
+         }
+ 
 -        final long uidRuleConfig;
 -        final long uidMatch;
 +        long uidRuleConfig = 0;
@@ -34,10 +34,10 @@ index 874a1f8..db13b14 100644
          final long blockingMatches = (uidRuleConfig & ~uidMatch & sMaskDropIfUnset)
                  | (uidRuleConfig & uidMatch & sMaskDropIfSet);
 diff --git a/service-t/src/com/android/server/net/NetworkStatsService.java b/service-t/src/com/android/server/net/NetworkStatsService.java
-index f7097de..45b2e01 100644
+index 88f9b74..de20793 100644
 --- a/service-t/src/com/android/server/net/NetworkStatsService.java
 +++ b/service-t/src/com/android/server/net/NetworkStatsService.java
-@@ -3274,7 +3274,8 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
+@@ -3313,7 +3313,8 @@ public class NetworkStatsService extends INetworkStatsService.Stub {
          try {
              return mStatsFactory.readNetworkStatsDetail(uid, ifaces, tag);
          } catch (IOException e) {
@@ -48,10 +48,10 @@ index f7097de..45b2e01 100644
      }
  
 diff --git a/service/src/com/android/server/BpfNetMaps.java b/service/src/com/android/server/BpfNetMaps.java
-index 7193ec2..d701ee1 100644
+index 8c11e11..2f8fbab 100644
 --- a/service/src/com/android/server/BpfNetMaps.java
 +++ b/service/src/com/android/server/BpfNetMaps.java
-@@ -838,6 +838,7 @@ public class BpfNetMaps {
+@@ -839,6 +839,7 @@ public class BpfNetMaps {
      @RequiresApi(Build.VERSION_CODES.TIRAMISU)
      public int getNetPermForUid(final int uid) {
          final int appId = UserHandle.getAppId(uid);
@@ -60,5 +60,5 @@ index 7193ec2..d701ee1 100644
              // Key of uid permission map is appId
              // TODO: Rename map name
 -- 
-2.39.5
+2.25.1
 

@@ -1,4 +1,4 @@
-From b179d8013b99ad43af474cc65021451d74bbf40a Mon Sep 17 00:00:00 2001
+From 992ea92988ee2552ddce0cf2959a07b4e54a8055 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 14 Nov 2021 13:47:29 -0500
 Subject: [PATCH] Pie MTK IMS calls static
@@ -29,5 +29,5 @@ index 217a26f..b687e4b 100644
       * Push configuration updates to the ImsService implementation.
       */
 -- 
-2.39.5
+2.25.1
 

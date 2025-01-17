@@ -1,7 +1,7 @@
-From 7b9d6385eb7d7aa7c50d3a86183e37317175a1ce Mon Sep 17 00:00:00 2001
+From f99e7cda2e288e3590f655150eb3ac3a61b18cde Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 23 Oct 2024 09:51:50 -0400
-Subject: [PATCH 11/11] Fix conflicting sepolicy for compaction_proactiveness
+Subject: [PATCH 11/12] Fix conflicting sepolicy for compaction_proactiveness
  on Galaxy A12s
 
 ---
@@ -9,10 +9,10 @@ Subject: [PATCH 11/11] Fix conflicting sepolicy for compaction_proactiveness
  1 file changed, 9 insertions(+)
 
 diff --git a/libsepol/cil/src/cil_post.c b/libsepol/cil/src/cil_post.c
-index 5428005..a11928b 100644
+index f781f78..d05f748 100644
 --- a/libsepol/cil/src/cil_post.c
 +++ b/libsepol/cil/src/cil_post.c
-@@ -511,6 +511,15 @@ static int cil_post_genfscon_context_compare(const void *a, const void *b)
+@@ -518,6 +518,15 @@ static int cil_post_genfscon_context_compare(const void *a, const void *b)
           */
  		if(strcmp(a_genfscon->path_str, "/sys/vm/watermark_scale_factor") == 0)
  			bypass = 1;
@@ -29,5 +29,5 @@ index 5428005..a11928b 100644
              if(strcmp(a_genfscon->path_str, "/") == 0)
                  bypass = 1;
 -- 
-2.39.5
+2.25.1
 

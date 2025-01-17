@@ -1,7 +1,7 @@
-From 12a1e4d146ce40c6199e4148ebdbc8fc860e7d08 Mon Sep 17 00:00:00 2001
+From 550328cd1d80ef5f2ba729db6aefa191219d269b Mon Sep 17 00:00:00 2001
 From: Huy Hoang <38396158+boydaihungst@users.noreply.github.com>
 Date: Thu, 19 Oct 2023 07:06:55 +0700
-Subject: [PATCH 18/24] fix: Nubia 6 series custom rc action prop validation
+Subject: [PATCH 17/23] fix: Nubia 6 series custom rc action prop validation
 
 ---
  init/action_parser.cpp | 1 +
@@ -20,5 +20,5 @@ index 49fe24a..f683790 100644
  
      for (const auto& prefix : kPartnerPrefixes) {
 -- 
-2.39.5
+2.25.1
 

@@ -1,7 +1,7 @@
-From eb5c39e06d4be299e203754791b423691b21a51c Mon Sep 17 00:00:00 2001
+From 1e5e45eaa83177873e43f060539d04ae263b422b Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 16 Apr 2022 14:30:14 -0400
-Subject: [PATCH 17/24] Add a prop to change Samsung flash strength
+Subject: [PATCH 16/23] Add a prop to change Samsung flash strength
 
 ---
  services/camera/libcameraservice/Android.bp   |  2 ++
@@ -9,10 +9,10 @@ Subject: [PATCH 17/24] Add a prop to change Samsung flash strength
  2 files changed, 21 insertions(+), 1 deletion(-)
 
 diff --git a/services/camera/libcameraservice/Android.bp b/services/camera/libcameraservice/Android.bp
-index 7b68d82..76a7fae 100644
+index 3e8ee10..74c3060 100644
 --- a/services/camera/libcameraservice/Android.bp
 +++ b/services/camera/libcameraservice/Android.bp
-@@ -85,6 +85,8 @@ cc_defaults {
+@@ -86,6 +86,8 @@ cc_defaults {
          "android.hardware.camera.device@3.5",
          "android.hardware.camera.device@3.6",
          "android.hardware.camera.device@3.7",
@@ -22,10 +22,10 @@ index 7b68d82..76a7fae 100644
          "android.hardware.common.fmq-V1-ndk",
          "camera_platform_flags_c_lib",
 diff --git a/services/camera/libcameraservice/common/hidl/HidlProviderInfo.cpp b/services/camera/libcameraservice/common/hidl/HidlProviderInfo.cpp
-index 1fe2d48..3673ffa 100644
+index 9ebd3e9..0c7d21e 100644
 --- a/services/camera/libcameraservice/common/hidl/HidlProviderInfo.cpp
 +++ b/services/camera/libcameraservice/common/hidl/HidlProviderInfo.cpp
-@@ -30,6 +30,8 @@
+@@ -31,6 +31,8 @@
  #include <android/hardware/camera/device/3.7/ICameraDevice.h>
  #include <vendor/samsung/hardware/camera/provider/3.0/ISehCameraProvider.h>
  #include <vendor/samsung/hardware/camera/provider/4.0/ISehCameraProvider.h>
@@ -34,7 +34,7 @@ index 1fe2d48..3673ffa 100644
  
  namespace {
  const bool kEnableLazyHal(property_get_bool("ro.camera.enableLazyHal", false));
-@@ -812,7 +814,23 @@ HidlProviderInfo::HidlDeviceInfo3::HidlDeviceInfo3(
+@@ -808,7 +810,23 @@ HidlProviderInfo::HidlDeviceInfo3::HidlDeviceInfo3(
  status_t HidlProviderInfo::HidlDeviceInfo3::setTorchMode(bool enabled) {
      using hardware::camera::common::V1_0::TorchMode;
      const sp<hardware::camera::device::V3_2::ICameraDevice> interface = startDeviceInterface();
@@ -60,5 +60,5 @@ index 1fe2d48..3673ffa 100644
  }
  
 -- 
-2.39.5
+2.25.1
 

@@ -1,7 +1,7 @@
-From d75e12bc8286a96acf408022acd37291dd04379a Mon Sep 17 00:00:00 2001
+From dd0aded7684e45ce56b703edce7b9dedca4bca47 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 17 Jun 2023 08:31:55 -0400
-Subject: [PATCH 31/49] Add Mediatek power hints on touch
+Subject: [PATCH 31/50] Add Mediatek power hints on touch
 
 Mediatek has multiple HALs (which existed concurrently), so it is a bit
 of a mess.
@@ -27,12 +27,12 @@ Change-Id: I9f1eac5a20b98920a5d0c8204fe4d165ba069f5a
  2 files changed, 52 insertions(+), 1 deletion(-)
 
 diff --git a/services/core/Android.bp b/services/core/Android.bp
-index 9aedf248d..271f1f62a 100644
+index bb9bb9287..4c2a42e3f 100644
 --- a/services/core/Android.bp
 +++ b/services/core/Android.bp
-@@ -231,7 +231,9 @@ java_library_static {
-         "aconfig_new_storage_flags_lib",
+@@ -242,7 +242,9 @@ java_library_static {
          "powerstats_flags_lib",
+         "locksettings_flags_lib",
          "vendor.aospa.biometrics.face",
 -        "vendor.samsung.hardware.sysinput-V1.2-java", // HIDL
 +        // HIDL
@@ -42,7 +42,7 @@ index 9aedf248d..271f1f62a 100644
      javac_shard_size: 50,
      javacflags: [
 diff --git a/services/core/java/com/android/server/wm/DisplayPolicy.java b/services/core/java/com/android/server/wm/DisplayPolicy.java
-index eb904d8f1..eb8ef1165 100644
+index be0f52dec..605c4f5d1 100644
 --- a/services/core/java/com/android/server/wm/DisplayPolicy.java
 +++ b/services/core/java/com/android/server/wm/DisplayPolicy.java
 @@ -225,6 +225,9 @@ public class DisplayPolicy {
@@ -75,7 +75,7 @@ index eb904d8f1..eb8ef1165 100644
  
          final Looper looper = UiThread.getHandler().getLooper();
          mHandler = new PolicyHandler(looper);
-@@ -550,6 +566,17 @@ public class DisplayPolicy {
+@@ -542,6 +558,17 @@ public class DisplayPolicy {
                          mService.mPowerManagerInternal.setPowerBoost(
                                  Boost.INTERACTION, duration);
                      }
@@ -91,7 +91,7 @@ index eb904d8f1..eb8ef1165 100644
 +                        }
 +                    }
                  }
- 
+                 
                  @Override
 @@ -568,6 +595,28 @@ public class DisplayPolicy {
                      if (listener != null) {
@@ -123,5 +123,5 @@ index eb904d8f1..eb8ef1165 100644
  
                  @Override
 -- 
-2.39.5
+2.25.1
 

@@ -1,4 +1,4 @@
-From 0a979115773d1fc5509bff3e419f64f01e8bc5ae Mon Sep 17 00:00:00 2001
+From ce50fc2044e505b69bfc75c05a1d62c872b3a6a8 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 26 Oct 2022 18:13:56 -0400
 Subject: [PATCH 4/4] Don't abort in case of cgroup/bpf setup fail, since some
@@ -22,5 +22,5 @@ index b0c5406..ec15ecc 100644
      gLog.info("libnetd_updatable_init success");
  
 -- 
-2.39.5
+2.25.1
 

@@ -1,7 +1,7 @@
-From eba86796e13380c5db50e727695b84085bdd07b1 Mon Sep 17 00:00:00 2001
+From 8a0041e3817305bac0c93ff5f2f449b8b29b3bc8 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 17 Oct 2023 11:08:06 -0400
-Subject: [PATCH 6/9] When logging UiccSlot, ignore error if we cant print
+Subject: [PATCH 06/10] When logging UiccSlot, ignore error if we cant print
  IccIds
 
 ---
@@ -28,5 +28,5 @@ index db10271..00c8acb 100644
                  + mPortIdxToPhoneId + ", mEid=" + Rlog.pii(TelephonyUtils.IS_DEBUGGABLE, mEid)
                  + ", mCardState=" + mCardState + " mSupportedMepMode=" + mSupportedMepMode + "]";
 -- 
-2.39.5
+2.25.1
 

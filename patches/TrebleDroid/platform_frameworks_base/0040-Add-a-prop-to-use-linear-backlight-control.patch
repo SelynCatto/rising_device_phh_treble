@@ -1,17 +1,17 @@
-From 606559cc133e293d80a05495f045879e965fca90 Mon Sep 17 00:00:00 2001
+From 308949dc48eeae21df157fc3a5099a46bb2010a2 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Mon, 30 Oct 2023 19:25:27 -0400
-Subject: [PATCH 40/49] Add a prop to use linear backlight control
+Subject: [PATCH 40/50] Add a prop to use linear backlight control
 
 ---
- .../settings/brightness/BrightnessController.java      | 10 ++++++++--
- 1 file changed, 8 insertions(+), 2 deletions(-)
+ .../settings/brightness/BrightnessController.java    | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
 
 diff --git a/packages/SystemUI/src/com/android/systemui/settings/brightness/BrightnessController.java b/packages/SystemUI/src/com/android/systemui/settings/brightness/BrightnessController.java
-index 0e2cfbada..0c65a9ed4 100644
+index af31d253b..7d0772fed 100644
 --- a/packages/SystemUI/src/com/android/systemui/settings/brightness/BrightnessController.java
 +++ b/packages/SystemUI/src/com/android/systemui/settings/brightness/BrightnessController.java
-@@ -368,9 +368,15 @@ public class BrightnessController implements ToggleSlider.Listener, MirroredBrig
+@@ -378,9 +378,15 @@ public class BrightnessController implements ToggleSlider.Listener, MirroredBrig
                  : MetricsEvent.ACTION_BRIGHTNESS;
          minBacklight = mBrightnessMin;
          maxBacklight = mBrightnessMax;
@@ -28,15 +28,17 @@ index 0e2cfbada..0c65a9ed4 100644
          if (stopTracking) {
              // TODO(brightnessfloat): change to use float value instead.
              MetricsLogger.action(mContext, metric,
-@@ -392,7 +398,7 @@ public class BrightnessController implements ToggleSlider.Listener, MirroredBrig
+@@ -405,8 +411,8 @@ public class BrightnessController implements ToggleSlider.Listener, MirroredBrig
          if (!tracking) {
              AsyncTask.execute(new Runnable() {
                      public void run() {
+-                        logBrightnessChange(mDisplayId, valFloat, false);
 -                        mDisplayManager.setBrightness(mDisplayId, valFloat);
++                        logBrightnessChange(mDisplayId, finalValFloat, false);
 +                        mDisplayManager.setBrightness(mDisplayId, finalValFloat);
                      }
                  });
          }
 -- 
-2.39.5
+2.25.1
 

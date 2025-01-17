@@ -1,4 +1,4 @@
-From 42fb01ded4ed07c1825458bba3f97c3c84d43485 Mon Sep 17 00:00:00 2001
+From 5767f4282603397455bef6f58a421af4a0483cd4 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 20 Dec 2023 09:48:04 -0500
 Subject: [PATCH 10/14] Fix loading unnamed GLES
@@ -22,7 +22,7 @@ Test:
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/opengl/libs/EGL/Loader.cpp b/opengl/libs/EGL/Loader.cpp
-index f77fca5..7e77285 100644
+index 7616e59..9bb5e54 100644
 --- a/opengl/libs/EGL/Loader.cpp
 +++ b/opengl/libs/EGL/Loader.cpp
 @@ -321,8 +321,7 @@ void* Loader::open(egl_connection_t* cnx) {
@@ -36,5 +36,5 @@ index f77fca5..7e77285 100644
          // matching if the device is launched before Android 14.
          hnd = attempt_to_load_system_driver(cnx, nullptr, false);
 -- 
-2.39.5
+2.25.1
 

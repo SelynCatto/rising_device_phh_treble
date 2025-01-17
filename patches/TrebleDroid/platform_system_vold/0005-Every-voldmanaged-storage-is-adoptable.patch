@@ -1,4 +1,4 @@
-From 6c25eaa7f95abd6975ae0978ec1e3ce4c3705793 Mon Sep 17 00:00:00 2001
+From 840f738a09ff395f15bdfdb0ccb14e3a6a215c6b Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 11 Mar 2020 14:02:35 +0100
 Subject: [PATCH 5/5] Every voldmanaged storage is adoptable
@@ -21,5 +21,5 @@ index 10407df..4f02e83 100644
                  configs->has_adoptable = true;
              }
 -- 
-2.39.5
+2.25.1
 

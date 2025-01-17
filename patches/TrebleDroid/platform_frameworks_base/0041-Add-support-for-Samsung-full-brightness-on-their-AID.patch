@@ -1,7 +1,7 @@
-From 408b4f549ad0a722897926e1fea1ccc52c8f1eb1 Mon Sep 17 00:00:00 2001
+From a96ab4c278a8e397d7c4166eed234c2932bee3c4 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 10 Dec 2023 18:04:49 -0500
-Subject: [PATCH 41/49] Add support for Samsung full brightness on their AIDL
+Subject: [PATCH 41/50] Add support for Samsung full brightness on their AIDL
  HAL
 
 ---
@@ -10,10 +10,10 @@ Subject: [PATCH 41/49] Add support for Samsung full brightness on their AIDL
  2 files changed, 44 insertions(+)
 
 diff --git a/services/core/Android.bp b/services/core/Android.bp
-index aef34ef01..ae5f220d5 100644
+index e7493cc14..0c1ad33d6 100644
 --- a/services/core/Android.bp
 +++ b/services/core/Android.bp
-@@ -239,6 +239,10 @@ java_library_static {
+@@ -250,6 +250,10 @@ java_library_static {
          "vendor.oplus.hardware.biometrics.fingerprint-V2.1-java",
          "vendor.oppo.hardware.biometrics.fingerprint-V2.1-java",
          "vendor.xiaomi.hardware.fingerprintextension-V1.0-java",
@@ -106,5 +106,5 @@ index 39c4e361e..57d824d57 100644
          mManagerService = new LightsManagerBinderService();
      }
 -- 
-2.39.5
+2.25.1
 

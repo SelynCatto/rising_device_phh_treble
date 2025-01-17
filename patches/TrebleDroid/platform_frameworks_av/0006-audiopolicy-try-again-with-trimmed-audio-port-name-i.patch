@@ -1,7 +1,7 @@
-From 8c368a537b6e0f117a8afc5a26389e4e75855ab5 Mon Sep 17 00:00:00 2001
+From 77ab0adfbef902e0927e63ee1f1b3d4922effeca Mon Sep 17 00:00:00 2001
 From: Peter Cai <peter@typeblog.net>
 Date: Thu, 23 Jan 2020 11:13:43 +0800
-Subject: [PATCH 06/24] audiopolicy: try again with trimmed audio port name if
+Subject: [PATCH 06/23] audiopolicy: try again with trimmed audio port name if
  not found
 
 * In Spreadtrum BSP, some audio routes may contain ports with extra
@@ -51,5 +51,5 @@ index 839974b..21d3282 100644
                  if (!mIgnoreVendorExtensions) {
                      ALOGE("%s: no source found with name \"%s\"", __func__, devTag);
 -- 
-2.39.5
+2.25.1
 

@@ -1,7 +1,7 @@
-From 3108ae43008dcf28a59c241abe6b04f13d894492 Mon Sep 17 00:00:00 2001
+From 693315dd70ebe276db95efea2b8a3c7e267cfa28 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 31 Mar 2024 17:18:05 -0400
-Subject: [PATCH 23/24] If AVB fails, ignore/disable AVB
+Subject: [PATCH 22/23] If AVB fails, ignore/disable AVB
 
 DO NOT INCLUDE THIS PATCH If you want to run GSIs on a locked bootloader
 
@@ -9,14 +9,14 @@ This is needed on Honor View 10 which declares "avb" in fstab while
 being AVB1.0
 ---
  init/first_stage_init.cpp  |  6 +++++-
- init/first_stage_mount.cpp | 10 +++++++++-
- 2 files changed, 14 insertions(+), 2 deletions(-)
+ init/first_stage_mount.cpp | 11 +++++++++--
+ 2 files changed, 14 insertions(+), 3 deletions(-)
 
 diff --git a/init/first_stage_init.cpp b/init/first_stage_init.cpp
-index bfe636b..2bf84cf 100644
+index e06a645..960b338 100644
 --- a/init/first_stage_init.cpp
 +++ b/init/first_stage_init.cpp
-@@ -514,7 +514,11 @@ int FirstStageMain(int argc, char** argv) {
+@@ -533,7 +533,11 @@ int FirstStageMain(int argc, char** argv) {
          }
  
          if (!created_devices && !fsm->DoCreateDevices()) {
@@ -30,10 +30,10 @@ index bfe636b..2bf84cf 100644
  
          if (!fsm->DoFirstStageMount()) {
 diff --git a/init/first_stage_mount.cpp b/init/first_stage_mount.cpp
-index b4c006e..98abf03 100644
+index 6d85c58..658931e 100644
 --- a/init/first_stage_mount.cpp
 +++ b/init/first_stage_mount.cpp
-@@ -233,6 +233,12 @@ Result<std::unique_ptr<FirstStageMount>> FirstStageMount::Create(const std::stri
+@@ -240,6 +240,12 @@ Result<std::unique_ptr<FirstStageMount>> FirstStageMount::Create(const std::stri
      } else {
          fstab = ReadFirstStageFstabAndroid();
      }
@@ -46,7 +46,7 @@ index b4c006e..98abf03 100644
      if (!fstab.ok()) {
          return fstab.error();
      }
-@@ -269,7 +275,9 @@ bool FirstStageMountVBootV2::DoFirstStageMount() {
+@@ -276,7 +282,9 @@ bool FirstStageMountVBootV2::DoFirstStageMount() {
          return true;
      }
  
@@ -57,6 +57,14 @@ index b4c006e..98abf03 100644
  
      return true;
  }
+@@ -460,7 +468,6 @@ bool FirstStageMountVBootV2::MountPartition(const Fstab::iterator& begin, bool e
+     if (begin->fs_mgr_flags.avb) {
+         if (!SetUpDmVerity(&(*begin))) {
+             PLOG(ERROR) << "Failed to setup verity for '" << begin->mount_point << "'";
+-            return false;
+         }
+     } else {
+         LOG(INFO) << "AVB is not enabled, skip verity setup for '" << begin->mount_point << "'";
 -- 
-2.39.5
+2.25.1
 

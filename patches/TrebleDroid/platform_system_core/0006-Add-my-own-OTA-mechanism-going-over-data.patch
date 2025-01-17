@@ -1,7 +1,7 @@
-From 5966ef29393a4f344f2676bf299fcf445139730c Mon Sep 17 00:00:00 2001
+From e534e0bf9c18d76645f08a20c34e9fbc66a1cdde Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sat, 22 Jan 2022 14:34:45 -0500
-Subject: [PATCH 06/24] Add my own OTA mechanism going over /data
+Subject: [PATCH 06/23] Add my own OTA mechanism going over /data
 
 Change-Id: I9cacff2d761affa0376b4bb8ca63353a9d95b5de
 ---
@@ -23,7 +23,7 @@ index a5da6e3..85f4ed6 100644
  
  FiemapStatus ImageManager::CreateBackingImage(
 diff --git a/init/selinux.cpp b/init/selinux.cpp
-index c2d9b8d..0389261 100644
+index 01af2b6..f129569 100644
 --- a/init/selinux.cpp
 +++ b/init/selinux.cpp
 @@ -58,6 +58,9 @@
@@ -61,7 +61,7 @@ index c2d9b8d..0389261 100644
  
  namespace android {
  namespace init {
-@@ -642,6 +650,60 @@ void LoadSelinuxPolicyMicrodroid() {
+@@ -644,6 +652,60 @@ void LoadSelinuxPolicyMicrodroid() {
      LoadSelinuxPolicy(policy);
  }
  
@@ -122,7 +122,7 @@ index c2d9b8d..0389261 100644
  // The SELinux setup process is carefully orchestrated around snapuserd. Policy
  // must be loaded off dynamic partitions, and during an OTA, those partitions
  // cannot be read without snapuserd. But, with kernel-privileged snapuserd
-@@ -658,6 +720,8 @@ void LoadSelinuxPolicyMicrodroid() {
+@@ -660,6 +722,8 @@ void LoadSelinuxPolicyMicrodroid() {
  //
  // After this sequence, it is safe to enable enforcing mode and continue booting.
  void LoadSelinuxPolicyAndroid() {
@@ -132,5 +132,5 @@ index c2d9b8d..0389261 100644
  
      LOG(INFO) << "Opening SELinux policy";
 -- 
-2.39.5
+2.25.1
 

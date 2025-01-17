@@ -1,7 +1,7 @@
-From cd3493d85723d3573cd43ab6e02558a4e17e90e8 Mon Sep 17 00:00:00 2001
+From ac471e696f81c7cb81862214c574b2adbef245d4 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 14 Dec 2022 17:21:00 -0500
-Subject: [PATCH 29/49] Call Samsung's ISehSysInputDev to report screen state
+Subject: [PATCH 29/50] Call Samsung's ISehSysInputDev to report screen state
  to touchscreen driver
 
 This fixes touchscreen not waking up on Galaxy F23
@@ -13,19 +13,19 @@ Change-Id: If2d74b97a51b19c730a6f9a1b1f4293d1469a9f8
  2 files changed, 32 insertions(+)
 
 diff --git a/services/core/Android.bp b/services/core/Android.bp
-index 38319006d..9aedf248d 100644
+index c735ca537..bb9bb9287 100644
 --- a/services/core/Android.bp
 +++ b/services/core/Android.bp
-@@ -231,6 +231,7 @@ java_library_static {
-         "aconfig_new_storage_flags_lib",
+@@ -242,6 +242,7 @@ java_library_static {
          "powerstats_flags_lib",
+         "locksettings_flags_lib",
          "vendor.aospa.biometrics.face",
 +        "vendor.samsung.hardware.sysinput-V1.2-java", // HIDL
      ],
      javac_shard_size: 50,
      javacflags: [
 diff --git a/services/core/java/com/android/server/display/LocalDisplayAdapter.java b/services/core/java/com/android/server/display/LocalDisplayAdapter.java
-index 44846f310..1b638c8ea 100644
+index 0570b2ab5..23004c10a 100644
 --- a/services/core/java/com/android/server/display/LocalDisplayAdapter.java
 +++ b/services/core/java/com/android/server/display/LocalDisplayAdapter.java
 @@ -39,6 +39,7 @@ import android.util.DisplayUtils;
@@ -36,7 +36,7 @@ index 44846f310..1b638c8ea 100644
  import android.util.SparseArray;
  import android.view.Display;
  import android.view.DisplayAddress;
-@@ -60,6 +61,8 @@ import com.android.server.display.notifications.DisplayNotificationManager;
+@@ -61,6 +62,8 @@ import com.android.server.display.notifications.DisplayNotificationManager;
  import com.android.server.lights.LightsManager;
  import com.android.server.lights.LogicalLight;
  
@@ -45,7 +45,7 @@ index 44846f310..1b638c8ea 100644
  import java.io.PrintWriter;
  import java.util.ArrayList;
  import java.util.Arrays;
-@@ -266,6 +269,8 @@ final class LocalDisplayAdapter extends DisplayAdapter {
+@@ -267,6 +270,8 @@ final class LocalDisplayAdapter extends DisplayAdapter {
  
          private DisplayEventReceiver.FrameRateOverride[] mFrameRateOverrides =
                  new DisplayEventReceiver.FrameRateOverride[0];
@@ -54,7 +54,7 @@ index 44846f310..1b638c8ea 100644
  
          LocalDisplayDevice(IBinder displayToken, long physicalDisplayId,
                  SurfaceControl.StaticDisplayInfo staticDisplayInfo,
-@@ -875,16 +880,42 @@ final class LocalDisplayAdapter extends DisplayAdapter {
+@@ -876,16 +881,42 @@ final class LocalDisplayAdapter extends DisplayAdapter {
                              }
                          }
  
@@ -98,5 +98,5 @@ index 44846f310..1b638c8ea 100644
  
                          // If we're entering a suspended (but not OFF) power state and we
 -- 
-2.39.5
+2.25.1
 

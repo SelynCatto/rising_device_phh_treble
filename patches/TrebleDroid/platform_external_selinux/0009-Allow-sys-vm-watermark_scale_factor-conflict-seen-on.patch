@@ -1,7 +1,7 @@
-From deb64bc0119dba57d5206ba4fb354f65387ec364 Mon Sep 17 00:00:00 2001
+From 20422330045b71f4d9e368273319a67a22c1834e Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Thu, 20 Jul 2023 14:21:21 -0400
-Subject: [PATCH 09/11] Allow /sys/vm/watermark_scale_factor conflict -- seen
+Subject: [PATCH 09/12] Allow /sys/vm/watermark_scale_factor conflict -- seen
  on Freebox Player Pop
 
 ---
@@ -9,10 +9,10 @@ Subject: [PATCH 09/11] Allow /sys/vm/watermark_scale_factor conflict -- seen
  1 file changed, 9 insertions(+)
 
 diff --git a/libsepol/cil/src/cil_post.c b/libsepol/cil/src/cil_post.c
-index 7f614c0..1703b3b 100644
+index 8b6d3f9..8b70d58 100644
 --- a/libsepol/cil/src/cil_post.c
 +++ b/libsepol/cil/src/cil_post.c
-@@ -502,6 +502,15 @@ static int cil_post_genfscon_context_compare(const void *a, const void *b)
+@@ -509,6 +509,15 @@ static int cil_post_genfscon_context_compare(const void *a, const void *b)
  		 */
  		if(strcmp(a_genfscon->path_str, "/devices/virtual/block/") == 0)
  			bypass = 1;
@@ -29,5 +29,5 @@ index 7f614c0..1703b3b 100644
              if(strcmp(a_genfscon->path_str, "/") == 0)
                  bypass = 1;
 -- 
-2.39.5
+2.25.1
 

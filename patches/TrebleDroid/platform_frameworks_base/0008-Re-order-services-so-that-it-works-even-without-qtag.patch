@@ -1,7 +1,7 @@
-From a7688139d7d5813b2f61ac6983d764050314b267 Mon Sep 17 00:00:00 2001
+From 1462092809b8fd9a661f3505ea442e60fd72be4e Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Thu, 8 Nov 2018 23:04:03 +0100
-Subject: [PATCH 08/49] Re-order services so that it works even without qtaguid
+Subject: [PATCH 08/50] Re-order services so that it works even without qtaguid
 
 Change-Id: I0c0f527b3ae151d45c68f7ac6c205da3f34e74df
 ---
@@ -9,10 +9,10 @@ Change-Id: I0c0f527b3ae151d45c68f7ac6c205da3f34e74df
  1 file changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/services/core/java/com/android/server/net/NetworkPolicyManagerService.java b/services/core/java/com/android/server/net/NetworkPolicyManagerService.java
-index 8c4773876..1f18ca02f 100644
+index 2c16ceefe..fc254d538 100644
 --- a/services/core/java/com/android/server/net/NetworkPolicyManagerService.java
 +++ b/services/core/java/com/android/server/net/NetworkPolicyManagerService.java
-@@ -1080,6 +1080,10 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
+@@ -1077,6 +1077,10 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
          Trace.traceBegin(Trace.TRACE_TAG_NETWORK, "systemReady");
          final int oldPriority = Process.getThreadPriority(Process.myTid());
          try {
@@ -23,7 +23,7 @@ index 8c4773876..1f18ca02f 100644
              // Boost thread's priority during system server init
              Process.setThreadPriority(Process.THREAD_PRIORITY_FOREGROUND);
              if (!isBandwidthControlEnabled()) {
-@@ -1087,10 +1091,6 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
+@@ -1084,10 +1088,6 @@ public class NetworkPolicyManagerService extends INetworkPolicyManager.Stub {
                  return;
              }
  
@@ -33,7 +33,7 @@ index 8c4773876..1f18ca02f 100644
 -
              mUseMeteredFirewallChains = Flags.useMeteredFirewallChains();
              mUseDifferentDelaysForBackgroundChain = Flags.useDifferentDelaysForBackgroundChain();
- 
+             mNeverApplyRulesToCoreUids = Flags.neverApplyRulesToCoreUids();
 -- 
-2.39.5
+2.25.1
 

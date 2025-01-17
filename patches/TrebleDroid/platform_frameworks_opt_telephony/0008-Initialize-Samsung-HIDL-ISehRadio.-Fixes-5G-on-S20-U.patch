@@ -1,7 +1,8 @@
-From a8cef6cdf7446962bd5ed84d099f32a32f16996d Mon Sep 17 00:00:00 2001
+From 92c1764eb316b0cd8006bf1dcd6869e3a30fd629 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 21 Feb 2024 16:21:51 -0500
-Subject: [PATCH 8/9] Initialize Samsung HIDL ISehRadio. Fixes 5G on S20 Ultra
+Subject: [PATCH 08/10] Initialize Samsung HIDL ISehRadio. Fixes 5G on S20
+ Ultra
 
 ---
  Android.bp                                    |   1 +
@@ -23,7 +24,7 @@ index c9ac926..6847ab0 100644
          "android.hardware.radio.data-V3-java",
          "android.hardware.radio.ims-V2-java",
 diff --git a/src/java/com/android/internal/telephony/RIL.java b/src/java/com/android/internal/telephony/RIL.java
-index 40edda0..4233bd9 100644
+index 7abe28d..572b6b1 100644
 --- a/src/java/com/android/internal/telephony/RIL.java
 +++ b/src/java/com/android/internal/telephony/RIL.java
 @@ -843,6 +843,7 @@ public class RIL extends BaseCommands implements CommandsInterface {
@@ -226,5 +227,5 @@ index 02fc751..fa02d52 100644
 +    }
  }
 -- 
-2.39.5
+2.25.1
 

@@ -1,4 +1,4 @@
-From fe0ac1223d550b33cb3b6f072cd51288046d4d47 Mon Sep 17 00:00:00 2001
+From 2f0dfe68fa4f374b5d0582107472936cd7005add Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 14 Aug 2019 23:37:10 +0200
 Subject: [PATCH 01/14] On Samsung, we need to send a hack-message to HAL to
@@ -31,5 +31,5 @@ index 9c4d1ac..6f81b5c 100644
          return;
      }
 -- 
-2.39.5
+2.25.1
 

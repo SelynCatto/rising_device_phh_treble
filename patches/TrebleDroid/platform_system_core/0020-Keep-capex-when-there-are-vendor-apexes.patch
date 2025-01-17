@@ -1,7 +1,7 @@
-From cfbd1273b42fc587e76233c35219eae37b61f74f Mon Sep 17 00:00:00 2001
+From 1efd5d8fe0f72ab1e3beb41985012c898f95a286 Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Tue, 16 Jan 2024 10:30:57 -0500
-Subject: [PATCH 21/24] Keep capex when there are vendor apexes
+Subject: [PATCH 20/23] Keep capex when there are vendor apexes
 
 When disabling APEX on Linux < 5, we might break some vendor APEXes
 For instance Pixel 4a on Linux 4.14.
@@ -11,10 +11,10 @@ If there is a vendor apex, enable APEX anyway.
  1 file changed, 12 insertions(+), 2 deletions(-)
 
 diff --git a/init/property_service.cpp b/init/property_service.cpp
-index a296182..6583501 100644
+index 5d62b8d..a468148 100644
 --- a/init/property_service.cpp
 +++ b/init/property_service.cpp
-@@ -719,8 +719,18 @@ static bool kernel_supports_capex() {
+@@ -715,8 +715,18 @@ static bool kernel_supports_capex() {
      uname(&buf);
      const char *where = buf.release;
      int a = atoi(where);
@@ -36,5 +36,5 @@ index a296182..6583501 100644
  
  /*
 -- 
-2.39.5
+2.25.1
 

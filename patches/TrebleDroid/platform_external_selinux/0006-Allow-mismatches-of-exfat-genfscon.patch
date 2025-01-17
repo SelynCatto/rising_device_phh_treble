@@ -1,17 +1,17 @@
-From 27c418e12f7625e7244e7ce0762fdc55de34ec15 Mon Sep 17 00:00:00 2001
+From 5a8e2d1eb487e88e1f37e14574d23d107470515b Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Sun, 24 May 2020 17:22:22 +0200
-Subject: [PATCH 06/11] Allow mismatches of exfat genfscon
+Subject: [PATCH 06/12] Allow mismatches of exfat genfscon
 
 ---
  libsepol/cil/src/cil_post.c | 4 ++++
  1 file changed, 4 insertions(+)
 
 diff --git a/libsepol/cil/src/cil_post.c b/libsepol/cil/src/cil_post.c
-index 99410da..7f614c0 100644
+index c57250c..8b6d3f9 100644
 --- a/libsepol/cil/src/cil_post.c
 +++ b/libsepol/cil/src/cil_post.c
-@@ -502,6 +502,10 @@ static int cil_post_genfscon_context_compare(const void *a, const void *b)
+@@ -509,6 +509,10 @@ static int cil_post_genfscon_context_compare(const void *a, const void *b)
  		 */
  		if(strcmp(a_genfscon->path_str, "/devices/virtual/block/") == 0)
  			bypass = 1;
@@ -23,5 +23,5 @@ index 99410da..7f614c0 100644
  			fprintf(stderr, "Received conflicting %s vs %s but ignore\n", a_genfscon->path_str, b_genfscon->path_str);
  			return 0;
 -- 
-2.39.5
+2.25.1
 

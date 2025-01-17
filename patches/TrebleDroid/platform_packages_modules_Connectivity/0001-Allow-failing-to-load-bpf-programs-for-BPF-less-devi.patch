@@ -1,17 +1,17 @@
-From ff87f5dba3803e8d2839ec2e5fe01cf487a6197b Mon Sep 17 00:00:00 2001
+From e1c59927a343c88f21e7f04f6216106ffaeb8c2f Mon Sep 17 00:00:00 2001
 From: Pierre-Hugues Husson <phh@phh.me>
 Date: Wed, 26 Oct 2022 18:10:04 -0400
 Subject: [PATCH 1/7] Allow failing to load bpf programs, for BPF-less devices
 
 Change-Id: I68ba3be2e15c188e56e32a6ecf844e1ca64d560f
 ---
- netd/BpfHandler.cpp | 10 ++++++++--
+ bpf/netd/BpfHandler.cpp | 10 ++++++++--
  1 file changed, 8 insertions(+), 2 deletions(-)
 
-diff --git a/netd/BpfHandler.cpp b/netd/BpfHandler.cpp
-index 1ba0c4a..bb69786 100644
---- a/netd/BpfHandler.cpp
-+++ b/netd/BpfHandler.cpp
+diff --git a/bpf/netd/BpfHandler.cpp b/bpf/netd/BpfHandler.cpp
+index 05ffdaf..15c625b 100644
+--- a/bpf/netd/BpfHandler.cpp
++++ b/bpf/netd/BpfHandler.cpp
 @@ -91,8 +91,14 @@ static Status initPrograms(const char* cg2_path) {
      RETURN_IF_NOT_OK(checkProgramAccessible(XT_BPF_DENYLIST_PROG_PATH));
      RETURN_IF_NOT_OK(checkProgramAccessible(XT_BPF_EGRESS_PROG_PATH));
@@ -30,5 +30,5 @@ index 1ba0c4a..bb69786 100644
      // For the devices that support cgroup socket filter, the socket filter
      // should be loaded successfully by bpfloader. So we attach the filter to
 -- 
-2.39.5
+2.25.1
 
