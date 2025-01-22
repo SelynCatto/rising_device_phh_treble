@@ -75,7 +75,7 @@ git am --abort
 git reset --hard 21d91cce4404e54fcf55184c50c33ae441d9cd58
 cd ../../
 apply "naz664"
-
+apply "mytja"
 
 # Build treble app after applying patch
 wget https://download.oracle.com/java/17/archive/jdk-17.0.12_linux-x64_bin.tar.gz
